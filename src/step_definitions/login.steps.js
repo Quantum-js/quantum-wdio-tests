@@ -41,8 +41,8 @@ module.exports = function() {
             browser.perfSetLocation(coordinates, "coordinates")
             browser.perfAssertLocation(coordinates)
             browser.perfResetLocation()
-            browser.pause()
-           // browser.perfVerifyLocation(deviceLocation)
+            // browser.pause()
+            // browser.perfVerifyLocation(deviceLocation)
 
 
         } else {
@@ -57,10 +57,10 @@ module.exports = function() {
         let title = 'Perfecto'
         let logo = 'PUBLIC:TestApplication/Images/logo.png'
 
-        browser.perfWaitForPresentImageVisual(logo, 5)
-        browser.perfFindImage(logo, 5)
-        browser.perfAssertVisualImage(logo, 5)
-        browser.perfVerifyVisualImage(logo)
+        browser.perfWaitForPresentImageVisual(logo, 5, 80, 99 )
+        browser.perfFindImage(logo, 5, 80, 99 )
+        browser.perfAssertVisualImage(logo, 5, 80, 99 )
+        browser.perfVerifyVisualImage(logo, 5, 80, 99 )
         browser.perfWaitForPresentTextVisual(title, 5)
         browser.perfFindText(title, 5)
         browser.perfAssertVisualText(title)
