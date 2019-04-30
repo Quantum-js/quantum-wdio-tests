@@ -1,0 +1,11 @@
+[
+  {
+    "maxInstances": 1,
+    "browserName": "",
+    "platformName": "iOS",
+    "repoLocationKey": "ios",
+    "bundleId": "io.perfecto.expense.tracker",
+    "deviceName": "DD992AFA0B69A5E2C2006A7A657690476B0086FE"
+  }
+]
+

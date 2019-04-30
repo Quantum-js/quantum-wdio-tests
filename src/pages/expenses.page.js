@@ -4,27 +4,42 @@ class ExpensesPage extends Page {
 
     constructor() {
 
-        super('expensesPage');
+        super('expenses');
 
     };
 
 
+    logout() {
 
-    ss(user, password) {
-
-        browser.waitForExist(this.loc.emailField,5000)
-
-        $(this.loc.emailField).clearElement()
-        browser.setValueImmediate(this.loc.emailField, user)
-        $(this.loc.passwordField).clearElement()
-        browser.setValueImmediate(this.loc.passwordField, password)
-        $(this.loc.loginBtn).click()
-
+        $(this.loc.menuBtn).click()
+        browser.waitForVisible(this.loc.logoutBtn, 5000)
+        $(this.loc.logoutBtn).click()
+        if (browser.isAndroid) {
+            browser.waitForVisible(this.loc.logoutPopupTitle, 5000)
+            $(this.loc.popupOkBtn).click()
+        }
     }
 
-    signout () {
+    checkImaneInjection() {
 
-        $(this.lod)
+        let logo = 'PUBLIC:TestApplication/Images/logo.png'
+        let app = 'Perfecto Expense Tracker'
+
+        $(this.loc.addBtn).click()
+        $(this.loc.attachBtn).click()
+        browser.perfStartImageInjection(logo, app, 'name')
+
+        $(this.loc.cameraBtn).click()
+
+        browser.waitForVisible(this.loc.popupOkBtn)
+        $(this.loc.popupOkBtn).click()
+
+        $(this.loc.takePic).click()
+        browser.waitForVisible(this.loc.usePhoto)
+        $(this.loc.usePhoto).click()
+        browser.perfStopImageInjection()
+        browser.waitForVisible(this.loc.browser.removeAttach)
+
 
     }
 }

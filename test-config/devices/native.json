@@ -1,11 +1,15 @@
 [
+
   {
     "maxInstances": 1,
     "browserName": "",
-    "platformName": "Android",
-    "repoLocationKey": "android",
-    "packageName": "io.perfecto.expense.tracker",
-    "deviceName": "05157DF5399ED633"
+    "platformName": "iOS",
+    "repoLocationKey": "ios",
+    "bundleId": "io.perfecto.expense.tracker",
+    "app": "PUBLIC:TestApplication/Native/InvoiceApp1.0.ipa",
+    "deviceName": "C37BAE1934AE7DD0AE3355F77146C7A65579CAA3",
+    "autoInstrument" : true,
+    "sensorInstrument" : true
   }
 
 

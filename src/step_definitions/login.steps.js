@@ -3,18 +3,38 @@ import chai from "chai";
 const assert = chai.assert
 
 module.exports = function() {
-    'use strict';
+    'use strict'
 
     let currentPage = new pageObjectMap['LoginPage'];
 
     this.Then(/^I login with user "([^"]*)" and password "([^"]*)"$/, function (user, password) {
         return currentPage.login(user, password);
-    });
+    })
+
+    this.Then(/^I logout$/, function () {
+        let currentPage = new pageObjectMap['ExpensesPage'];
+        return currentPage.logout();
+    })
 
 
     this.Then(/^I validate app functions$/, function () {
 
-    });
+        let filePath = browser.isAndroid? 'PUBLIC:TestApplication/Native/ExpenseAppVer1.0.apk' : 'PUBLIC:TestApplication/Native/InvoiceApp1.0.ipa'
+        let app = 'Perfecto Expense Tracker'
+
+        // browser.perfInstallApp(filePath, true)
+        // browser.perfStartApp(app, 'name')
+        // browser.perfCloseApp(app, 'name')
+        // browser.perfCleanApp(app, 'name')
+        // browser.perfUninstallApp(app, 'name')
+        browser.perfInstallApp(filePath, true, true)
+
+        let propertyName = 'version'
+        let appVersion = browser.perfGetAppInfo(propertyName)
+        browser.perfVerifyAppInfo(propertyName, appVersion)
+        browser.perfAssertAppInfo(propertyName, appVersion)
+
+    })
 
     this.Then(/^I validate timezone functions$/, function () {
 
@@ -31,7 +51,7 @@ module.exports = function() {
 
             browser.perfReportComment('Not supported for this platform')
         }
-    });
+    })
 
     this.Then(/^I validate location functions$/, function () {
 
@@ -49,7 +69,7 @@ module.exports = function() {
 
             browser.perfReportComment('Not supported for this platform')
         }
-    });
+    })
 
     this.Then(/^I validate visual functions$/, function () {
 
@@ -67,6 +87,13 @@ module.exports = function() {
         browser.perfVerifyVisualText(title)
 
     });
+
+    this.Then(/^I validate sensor functions$/, function () {
+
+        let currentPage = new pageObjectMap['ExpensesPage'];
+        currentPage.checkImaneInjection()
+
+    })
 
 
 }

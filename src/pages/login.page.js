@@ -4,7 +4,7 @@ class LoginPage extends Page {
 
     constructor() {
 
-        super('loginPage');
+        super('login');
 
     };
 
@@ -12,7 +12,18 @@ class LoginPage extends Page {
 
     login(user, password) {
 
+        browser.perfGenerateHAR()
+
         browser.waitForExist(this.loc.emailField,5000)
+        browser.waitForVisible(this.loc.emailField, 5000)
+        browser.waitForEnabled(this.loc.emailField, 5000)
+
+        // TODO: test properly
+        // if (browser.isAndroid) {
+        //     browser.waitForSelected(this.loc.emailField, 5000, true)
+        //     browser.waitForText(this.loc.emailField, 5000)
+        //     browser.waitForValue(this.loc.emailField, 5000)
+        // }
 
         $(this.loc.emailField).clearElement()
         browser.setValueImmediate(this.loc.emailField, user)
@@ -20,7 +31,11 @@ class LoginPage extends Page {
         browser.setValueImmediate(this.loc.passwordField, password)
         $(this.loc.loginBtn).click()
 
+        browser.perfStopGenerateHAR()
+
     }
+
+
 
 }
 module.exports= LoginPage

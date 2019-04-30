@@ -1,12 +1,12 @@
-// generic
+// generic - done
 browser.setValueImmediate(selector, value)
 browser.waitForVisible(selector, ms, reverse)
 browser.waitForEnabled(selector, ms, reverse)
 browser.waitForSelected(selector, ms, reverse)
 browser.waitForText(selector, ms, reverse)
-browser.waitForValue(selector, ms, reverse
+browser.waitForValue(selector, ms, reverse)
 
-browser.perfPressKey(keySequence)
+
 
 // done
 browser.perfReportVerify(assertFnc)
@@ -14,15 +14,14 @@ browser.perfReportAssert(message, status)
 // under perfecto.application.steps
 
 
-// app start stop info
+// app start stop info - done
 browser.perfInstallApp(filePath, shouldInstrument)
 browser.perfStartApp(app, by)
 browser.perfCloseApp(app, by, ignoreExceptions = false)
 browser.perfCleanApp(app, by)
 browser.perfUninstallApp(app, by)
-
-browser.perfUninstallAllApps()
-browser.perfGetApplicationInfo(property)
+browser.perfUninstallAllApps() - no need to test
+browser.perfGetAppInfo(property)
 browser.perfVerifyAppInfo(propertyName, propertyValue)
 browser.perfAssertAppInfo(propertyName, propertyValue)
 
@@ -43,7 +42,7 @@ browser.perfStopImageInjection()
 browser.perfSetFingerprint(by, identifier, resultAuth, errorType)
 browser.perfSetSensorAuthentication(by, identifier, resultAuth, errorType)
 browser.perfAudioInject(filePath)
-browser.perfVerifyAudioReceived()
+browser.perfVerifyAudioReceived() - not tested
 
 
 // under perfecto.device.steps
@@ -54,7 +53,7 @@ browser.perfVerifyLocation(location)
 browser.perfGetDeviceLocation()
 browser.perfResetLocation()
 
-//
+// done
 browser.perfGenerateHAR()
 browser.perfStopGenerateHAR()
 
@@ -77,6 +76,8 @@ browser.perfLongTouch(point, seconds = 2)
 browser.perfTouch(point)
 browser.perfDoubleTouch(point)
 browser.perfHideKeyboard()
+
+browser.perfPressKey(keySequence)
 
 // done
 browser.perfReportComment(comment)
