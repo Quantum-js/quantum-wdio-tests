@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "description": "Quantum JS test suite",
     "scripts": {
-        "tests": "wdio ./wdio-config/tests.wdio.conf.js "
+        "tests": "wdio ./wdio-config/tests.wdio.conf.js ",
+        "google": "wdio ./wdio-config/google.wdio.conf.js "
     },
     "keywords": [],
     "author": "",
@@ -35,7 +36,8 @@
         "wdio-json-reporter": "~0.1.0",
         "wdio-junit-reporter": "~0.1.0",
         "wdio-screenshot": "0.6.0",
-        "webdriverio": "^4.14.1"
+        "webdriverio": "^4.14.1",
+        "wdio-perfecto-service": "0.1.11"
     },
     "dependencies": {
         "lodash": "^4.17.11"

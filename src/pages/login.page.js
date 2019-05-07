@@ -13,10 +13,10 @@ class LoginPage extends Page {
     login(user, password) {
 
         browser.perfGenerateHAR()
-
-        browser.waitForExist(this.loc.emailField,5000)
-        browser.waitForVisible(this.loc.emailField, 5000)
-        browser.waitForEnabled(this.loc.emailField, 5000)
+        browser.pause(5000)
+//        browser.waitForExist(this.loc.emailField, 10000)
+//        browser.waitForVisible(this.loc.emailField, 5000)
+//        browser.waitForEnabled(this.loc.emailField, 5000)
 
         // TODO: test properly
         // if (browser.isAndroid) {
@@ -24,7 +24,12 @@ class LoginPage extends Page {
         //     browser.waitForText(this.loc.emailField, 5000)
         //     browser.waitForValue(this.loc.emailField, 5000)
         // }
-
+        $(this.loc.passwordField).click()
+        if (browser.isAndroid) {
+            browser.perfPressKey("KEYBOARD_GO")
+            $(this.loc.passwordField).click()
+            browser.perfHideKeyboard()
+        }
         $(this.loc.emailField).clearElement()
         browser.setValueImmediate(this.loc.emailField, user)
         $(this.loc.passwordField).clearElement()
@@ -34,8 +39,5 @@ class LoginPage extends Page {
         browser.perfStopGenerateHAR()
 
     }
-
-
-
 }
 module.exports= LoginPage

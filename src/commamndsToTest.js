@@ -16,10 +16,10 @@ browser.perfReportAssert(message, status)
 
 // app start stop info - done
 browser.perfInstallApp(filePath, shouldInstrument)
-browser.perfStartApp(app, by)
-browser.perfCloseApp(app, by, ignoreExceptions = false)
-browser.perfCleanApp(app, by)
-browser.perfUninstallApp(app, by)
+browser.perfStartApp(by, app)
+browser.perfCloseApp(by, app, ignoreExceptions = false)
+browser.perfCleanApp(by, app)
+browser.perfUninstallApp(by, app)
 browser.perfUninstallAllApps() - no need to test
 browser.perfGetAppInfo(property)
 browser.perfVerifyAppInfo(propertyName, propertyValue)
@@ -36,18 +36,19 @@ browser.perfAssertVisualText(text)
 browser.perfVerifyVisualText(text)
 
 
-//  sensor
-browser.perfStartImageInjection(repositoryFile, app, by)
+//  sensor  done
+browser.perfStartImageInjection(repositoryFile,by, app)
 browser.perfStopImageInjection()
 browser.perfSetFingerprint(by, identifier, resultAuth, errorType)
-browser.perfSetSensorAuthentication(by, identifier, resultAuth, errorType)
-browser.perfAudioInject(filePath)
-browser.perfVerifyAudioReceived() - not tested
+
+browser.perfSetSensorAuthentication(by, identifier, resultAuth, errorType) // bot tested
+browser.perfAudioInject(filePath) // not tested
+browser.perfVerifyAudioReceived() // not tested
 
 
 // under perfecto.device.steps
 //  done
-browser.perfSetLocation(location, by)
+browser.perfSetLocation(by, location)
 browser.perfAssertLocation(location)
 browser.perfVerifyLocation(location)
 browser.perfGetDeviceLocation()
@@ -66,7 +67,7 @@ browser.perfVerifyTimezone(timezone)
 browser.perfResetTimezone()
 
 
-
+// done
 browser.perfGoToHomeScreen()
 browser.perfSwipe(start, end)
 browser.perfLockDevice(sec)
@@ -76,7 +77,6 @@ browser.perfLongTouch(point, seconds = 2)
 browser.perfTouch(point)
 browser.perfDoubleTouch(point)
 browser.perfHideKeyboard()
-
 browser.perfPressKey(keySequence)
 
 // done
@@ -89,4 +89,6 @@ browser.perfSlideObjectLeft(selector)
 browser.perfSlideObject(selector, xStartMult, xEndMult, yStartMult, yEndMult = yStartMult)
 browser.perfGetScale()
 browser.perfGetOffset(addressBar, context = 'NATIVE_APP')
+
+
 

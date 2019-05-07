@@ -10,6 +10,14 @@
     "deviceName": "C37BAE1934AE7DD0AE3355F77146C7A65579CAA3",
     "autoInstrument" : true,
     "sensorInstrument" : true
+  },
+  {
+    "maxInstances": 1,
+    "browserName": "",
+    "platformName": "iOS",
+    "repoLocationKey": "ios",
+    "bundleId": "io.perfecto.expense.tracker",
+    "deviceName": "C2210C8EBD9A1FB421A8D0A692E6C72F85E4C9E"
   }
 
 
