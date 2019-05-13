@@ -1,10 +1,9 @@
 [
   {
     "maxInstances":1,
-    "browserName": "Chrome",
     "platformName": "Android",
-    "model":"Galaxy S6",
-    "repoLocationKey": "android"
+    "repoLocationKey": "android",
+    "deviceName": "LGUS99185B89D4C"
   }
 ]
 
