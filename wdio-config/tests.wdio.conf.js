@@ -23,7 +23,7 @@ global.IMPLICIT_TIMEOUT=5000
 global.WAITFOR_TIMEOUT=10000
 
 exports.config={
-
+    waitForTimeout: 10000,
     services:['perfecto'],
     // user:process.env.PERFECTO_USER,
     securityToken:process.env.PERFECTO_TOKEN,
