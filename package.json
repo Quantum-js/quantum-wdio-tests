@@ -28,7 +28,6 @@
         "gulp-json-editor": "^2.5.0",
         "path": "^0.12.7",
         "perfecto-reporting": "^2.4.1",
-        "selenium-standalone": "^5.7.2",
         "strict-mode": "^1.0.2",
         "wdio-allure-reporter": "~0.1.2",
         "wdio-cucumber-framework": "0.3.1",
@@ -36,8 +35,8 @@
         "wdio-json-reporter": "~0.1.0",
         "wdio-junit-reporter": "~0.1.0",
         "wdio-screenshot": "0.6.0",
-        "webdriverio": "^4.14.1",
-        "wdio-perfecto-service": "0.1.12"
+        "webdriverio": "^4.14.4",
+        "wdio-perfecto-service": "0.1.13"
     },
     "dependencies": {
         "lodash": "^4.17.11"
