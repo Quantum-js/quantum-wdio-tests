@@ -39,6 +39,6 @@
         "webdriverio": "^4.14.4"
     },
     "dependencies": {
-        "lodash": "^4.17.11"
+        "lodash": "latest"
     }
 }
